@@ -1,0 +1,2 @@
+curl http://localhost:3060/api/gifts/875
+{"_id":"6a81d0387e061d8deb343772","id":"875","name":"Lamp","category":"Kitchen","condition":"New","posted_by":"26872","zipcode":"94805","date_added":1693267200,"age_days":400,"age_years":1.1,"description":"A charming lamp that's been lighting up my reading nook...","image":"/images/lamp.jpeg"}
