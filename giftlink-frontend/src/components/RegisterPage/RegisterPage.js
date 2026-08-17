@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {urlConfig} from '../../config';
 import './RegisterPage.css';
 
 function RegisterPage() {
@@ -6,9 +8,32 @@ function RegisterPage() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
-  const handleRegister = () => {
-    console.log('Registering user:', { firstName, lastName, email, password });
+  const handleRegister = async () => {
+    setMessage('');
+
+    try {
+      const response = await fetch(urlConfig.backendUrl + '/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({ firstName, lastName, email, password })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Registration failed');
+      }
+
+      setMessage('Registration successful. Redirecting to login...');
+      navigate('/app/login');
+    } catch (error) {
+      setMessage(error.message);
+    }
   };
 
   return (
@@ -33,6 +58,7 @@ function RegisterPage() {
               <label htmlFor="password">Password</label>
               <input id="password" type="password" className="form-control" value={password} onChange={(event) => setPassword(event.target.value)} />
             </div>
+            {message && <div className="alert alert-info">{message}</div>}
             <button type="button" className="btn btn-primary w-100" onClick={handleRegister}>Register</button>
             <p className="mt-4 text-center">Already a member? <a href="/app/login" className="text-primary">Login</a></p>
           </div>
