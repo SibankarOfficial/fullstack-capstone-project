@@ -1,0 +1,49 @@
+Gift count: 16
+First two gifts:
+[
+  {
+    _id: ObjectId('6a82c809c621a72898566ccb'),
+    id: '875',
+    name: 'Lamp',
+    category: 'Kitchen',
+    condition: 'New',
+    posted_by: '26872',
+    zipcode: '94805',
+    date_added: 1693267200,
+    age_days: 400,
+    age_years: 1.1,
+    description: "A charming lamp that's been lighting up my reading nook...",
+    image: '/images/lamp.jpeg'
+  },
+  {
+    _id: ObjectId('6a82c809c621a72898566ccc'),
+    id: '396',
+    name: 'Curtain',
+    category: 'Office',
+    condition: 'Older',
+    posted_by: '26872',
+    zipcode: '94504',
+    date_added: 1686960000,
+    age_days: 1073,
+    age_years: 2.94,
+    description: 'Elegant, flowy curtains that have graced my living room windows...',
+    image: '/images/curtains1.jpeg'
+  }
+]
+Gift id 429:
+[
+  {
+    _id: ObjectId('6a82c809c621a72898566cd9'),
+    id: '429',
+    name: 'Side Table',
+    category: 'Living Room',
+    condition: 'Older',
+    posted_by: '23789',
+    zipcode: '94102',
+    date_added: 1677715200,
+    age_days: 1100,
+    age_years: 3.01,
+    description: 'This side table has been a convenient spot for lamps and books...',
+    image: '/images/side-table.jpeg'
+  }
+]
