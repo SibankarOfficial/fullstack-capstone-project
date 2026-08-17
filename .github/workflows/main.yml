@@ -21,10 +21,10 @@ jobs:
         run: npm install jshint --global
       - name: Run Linter
         run: |
-          find ./giftlink-backend -name app.js -exec jshint {} +
-          find ./giftlink-backend -name auth.js -exec jshint {} +
-          find ./giftlink-backend -name giftRoutes.js -exec jshint {} +
-          find ./giftlink-backend -name searchRoutes.js -exec jshint {} +
+          find ./giftlink-backend -name app.js -exec jshint --esversion 8 {} +
+          find ./giftlink-backend -name auth.js -exec jshint --esversion 8 {} +
+          find ./giftlink-backend -name giftRoutes.js -exec jshint --esversion 8 {} +
+          find ./giftlink-backend -name searchRoutes.js -exec jshint --esversion 8 {} +
           echo "Linted all the js files successfully"
 
   client_build:
